@@ -17,6 +17,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import MatrixCanvas from "@/components/MatrixCanvas";
 import Logo from "@/components/Logo";
 import LatestReleaseBadge from "@/components/LatestReleaseBadge";
 import { issuesUrl, repoUrl, site, type Platform } from "@/lib/site";
@@ -42,6 +43,7 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-line">
+        <MatrixCanvas mode="ambient" className="matrix-ambient absolute inset-0 h-full w-full" />
         <div className="grid-bg absolute inset-0" aria-hidden />
         <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-raised blur-[120px]" aria-hidden />
         <div className="container-x relative grid items-center gap-14 py-24 lg:grid-cols-[1.05fr_.95fr] lg:py-32">

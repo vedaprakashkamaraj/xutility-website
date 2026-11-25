@@ -3,6 +3,7 @@ import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MatrixIntro from "@/components/MatrixIntro";
 import { site } from "@/lib/site";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             __html: `(function(){try{var t=localStorage.getItem('xutility-theme');if(t){document.documentElement.dataset.theme=t}}catch(e){}})();`,
           }}
         />
+        <MatrixIntro />
         <Navbar />
         <main>{children}</main>
         <Footer />
