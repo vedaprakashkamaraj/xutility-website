@@ -42,8 +42,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`dark ${geist.variable} ${jetbrains.variable}`}>
-      <body className="min-h-screen bg-ink text-zinc-100">
+    <html lang="en" className={`dark ${geist.variable} ${jetbrains.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen bg-ink text-fg">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('xutility-theme');if(t){document.documentElement.dataset.theme=t}}catch(e){}})();`,
+          }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

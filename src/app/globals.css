@@ -2,14 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+[data-theme="matte-black"] {
   --font-sans: var(--font-geist), "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", SFMono-Regular, Consolas, monospace;
   --bg: #000000;
   --panel: #080808;
+  --raised: rgba(255, 255, 255, 0.06);
   --line: rgba(255, 255, 255, 0.14);
+  --grid: rgba(255, 255, 255, 0.04);
   --fg: #ffffff;
   --muted: #a1a1aa;
+  --subtle: #71717a;
+  --accent: #ffffff;
+  --accent-ink: #000000;
+}
+
+[data-theme="tokyo-night"] {
+  --bg: #1a1b26;
+  --panel: #1f2130;
+  --raised: rgba(122, 162, 247, 0.1);
+  --line: rgba(169, 177, 214, 0.2);
+  --grid: rgba(169, 177, 214, 0.05);
+  --fg: #c0caf5;
+  --muted: #a9b1d6;
+  --subtle: #7d87b9;
+  --accent: #7aa2f7;
+  --accent-ink: #1a1b26;
+}
+
+[data-theme="nord"] {
+  --bg: #2e3440;
+  --panel: #3b4252;
+  --raised: rgba(136, 192, 208, 0.1);
+  --line: rgba(216, 222, 233, 0.18);
+  --grid: rgba(216, 222, 233, 0.05);
+  --fg: #eceff4;
+  --muted: #d8dee9;
+  --subtle: #a9b4c4;
+  --accent: #88c0d0;
+  --accent-ink: #2e3440;
+}
+
+[data-theme="catppuccin"] {
+  --bg: #1e1e2e;
+  --panel: #252535;
+  --raised: rgba(203, 166, 247, 0.1);
+  --line: rgba(205, 214, 244, 0.16);
+  --grid: rgba(205, 214, 244, 0.04);
+  --fg: #cdd6f4;
+  --muted: #a6adc8;
+  --subtle: #7f849c;
+  --accent: #cba6f7;
+  --accent-ink: #1e1e2e;
+}
+
+[data-theme="gruvbox"] {
+  --bg: #282828;
+  --panel: #32302f;
+  --raised: rgba(250, 189, 47, 0.1);
+  --line: rgba(235, 219, 178, 0.18);
+  --grid: rgba(235, 219, 178, 0.05);
+  --fg: #ebdbb2;
+  --muted: #bdae93;
+  --subtle: #a89984;
+  --accent: #fabd2f;
+  --accent-ink: #282828;
+}
+
+[data-theme="rose-pine"] {
+  --bg: #191724;
+  --panel: #1f1d2e;
+  --raised: rgba(235, 188, 186, 0.1);
+  --line: rgba(224, 222, 244, 0.16);
+  --grid: rgba(224, 222, 244, 0.04);
+  --fg: #e0def4;
+  --muted: #b0a6c8;
+  --subtle: #908caa;
+  --accent: #ebbcba;
+  --accent-ink: #191724;
+}
+
+[data-theme="white"] {
+  --bg: #ffffff;
+  --panel: #f6f6f6;
+  --raised: rgba(0, 0, 0, 0.05);
+  --line: rgba(0, 0, 0, 0.16);
+  --grid: rgba(0, 0, 0, 0.05);
+  --fg: #111111;
+  --muted: #52525b;
+  --subtle: #71717a;
+  --accent: #111111;
+  --accent-ink: #ffffff;
 }
 
 * { border-color: var(--line); }
@@ -30,12 +114,12 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: #ffffff; color: #000000; }
+::selection { background: var(--accent); color: var(--accent-ink); }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #000; }
-::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 999px; border: 2px solid #000; }
-::-webkit-scrollbar-thumb:hover { background: #444; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
 @layer components {
   .container-x {
@@ -52,27 +136,27 @@ body {
   }
 
   .card {
-    @apply rounded-md border border-white/[0.14] bg-transparent p-6 transition-colors duration-150;
+    @apply rounded-md border border-line bg-transparent p-6 transition-colors duration-150;
   }
 
   .card:hover {
-    @apply border-white/40;
+    @apply border-fg;
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-black transition-colors duration-150 hover:bg-white/80;
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-ink transition-[filter] duration-150 hover:brightness-90;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/25 bg-transparent px-5 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:border-white/60 hover:bg-white/[0.06];
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line bg-transparent px-5 py-3 text-sm font-semibold text-fg transition-colors duration-150 hover:border-fg hover:bg-raised;
   }
 
   .pill {
-    @apply inline-flex items-center gap-2 rounded-sm border border-white/20 bg-transparent px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-400;
+    @apply inline-flex items-center gap-2 rounded-sm border border-line bg-transparent px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted;
   }
 
   .eyebrow {
-    @apply mb-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500;
+    @apply mb-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-subtle;
   }
 
   .hairline {
@@ -90,18 +174,18 @@ body {
   }
 }
 
-.prose-x h3 { @apply mt-8 text-lg font-semibold text-white; }
-.prose-x p { @apply mt-3 text-sm leading-7 text-zinc-400; }
-.prose-x ul { @apply mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-400; }
-.prose-x code { @apply rounded-sm bg-white/10 px-1.5 py-0.5 font-mono text-[13px] text-zinc-100; }
-.prose-x pre { @apply mt-4 overflow-x-auto rounded-md border border-white/15 bg-[#080808] p-4 font-mono text-[13px] text-zinc-300; }
+.prose-x h3 { @apply mt-8 text-lg font-semibold text-fg; }
+.prose-x p { @apply mt-3 text-sm leading-7 text-muted; }
+.prose-x ul { @apply mt-4 list-disc space-y-2 pl-5 text-sm text-muted; }
+.prose-x code { @apply rounded-sm bg-raised px-1.5 py-0.5 font-mono text-[13px] text-fg; }
+.prose-x pre { @apply mt-4 overflow-x-auto rounded-md border border-line bg-panel p-4 font-mono text-[13px] text-muted; }
 .prose-x pre code { @apply bg-transparent p-0; }
-.prose-x a { @apply text-white underline decoration-white/40 underline-offset-4 hover:decoration-white; }
+.prose-x a { @apply text-fg underline decoration-line underline-offset-4 hover:decoration-fg; }
 
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 80%);
 }

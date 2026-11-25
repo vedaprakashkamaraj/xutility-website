@@ -41,9 +41,9 @@ const platformCards: { key: Platform; icon: LucideIcon; blurb: string; detail: s
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-white/10">
+      <section className="relative overflow-hidden border-b border-line">
         <div className="grid-bg absolute inset-0" aria-hidden />
-        <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-white/[0.05] blur-[120px]" aria-hidden />
+        <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-raised blur-[120px]" aria-hidden />
         <div className="container-x relative grid items-center gap-14 py-24 lg:grid-cols-[1.05fr_.95fr] lg:py-32">
           <Reveal>
             <Logo size={72} className="mb-9" />
@@ -54,10 +54,10 @@ export default function HomePage() {
 
             <h1 className="display text-[clamp(3.4rem,9vw,7.5rem)]">
               One Utility.<br />
-              <span className="text-zinc-400">Every Platform.</span>
+              <span className="text-muted">Every Platform.</span>
             </h1>
 
-            <p className="mt-8 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg">
+            <p className="mt-8 max-w-xl text-base leading-8 text-muted sm:text-lg">
               {site.description} Built for people who want one clean way to set up a machine, install apps and keep the system in shape.
             </p>
 
@@ -70,10 +70,10 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 text-xs text-zinc-600">
+            <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 text-xs text-subtle">
               {site.platforms.map((p) => (
                 <span key={p} className="inline-flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-zinc-600" /> {p}
+                  <span className="h-1 w-1 rounded-full bg-subtle" /> {p}
                 </span>
               ))}
             </div>
@@ -81,22 +81,22 @@ export default function HomePage() {
 
           <Reveal delay={0.12}>
             <div className="panel relative rounded-md p-2">
-              <div className="rounded-sm border border-white/10 bg-[#050505] p-4">
+              <div className="rounded-sm border border-line bg-panel p-4">
                 <div className="mb-4 flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                  <span className="mono ml-3 text-[11px] text-zinc-600">xutil --gui</span>
+                  <span className="h-2.5 w-2.5 rounded-full bg-raised" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-raised" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-raised" />
+                  <span className="mono ml-3 text-[11px] text-subtle">xutil --gui</span>
                 </div>
-                <div className="mono space-y-1.5 text-[12px] leading-6 text-zinc-400 sm:text-[13px]">
-                  <p><span className="text-zinc-600">$</span> python3 xutil.py --check</p>
+                <div className="mono space-y-1.5 text-[12px] leading-6 text-muted sm:text-[13px]">
+                  <p><span className="text-subtle">$</span> python3 xutil.py --check</p>
                   <p className="text-emerald-400">catalog OK: 210 entries, 77 visible on linux</p>
-                  <p><span className="text-zinc-600">$</span> python3 xutil.py --gui</p>
-                  <p className="text-zinc-500">loaded 8 tabs · 6 themes · ready</p>
+                  <p><span className="text-subtle">$</span> python3 xutil.py --gui</p>
+                  <p className="text-muted">loaded 8 tabs · 6 themes · ready</p>
                 </div>
                 <div className="mt-4 grid grid-cols-3 gap-2">
                   {["APPS", "SYSTEM", "UTILS"].map((t) => (
-                    <div key={t} className="rounded-lg border border-white/10 bg-white/[0.03] p-3 text-center text-[10px] tracking-[0.18em] text-zinc-500">
+                    <div key={t} className="rounded-lg border border-line bg-raised p-3 text-center text-[10px] tracking-[0.18em] text-muted">
                       {t}
                     </div>
                   ))}
@@ -107,7 +107,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section border-b border-white/10">
+      <section className="section border-b border-line">
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">Supported platforms</p>
@@ -119,12 +119,12 @@ export default function HomePage() {
               return (
                 <Reveal key={card.key} delay={i * 0.08}>
                   <Link href={`/download#${card.key}`} className="card block h-full">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-md border border-white/10 bg-white/[0.05]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-md border border-line bg-raised">
                       <Icon size={20} />
                     </div>
                     <h3 className="mt-6 text-lg font-semibold">{card.blurb}</h3>
-                    <p className="mt-2 text-sm leading-6 text-zinc-500">{card.detail}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-zinc-400">
+                    <p className="mt-2 text-sm leading-6 text-muted">{card.detail}</p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-muted">
                       Download options <ArrowRight size={14} />
                     </span>
                   </Link>
@@ -135,12 +135,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section border-b border-white/10">
+      <section className="section border-b border-line">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <p className="eyebrow">Product preview</p>
             <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">A toolbox that stays out of the way.</h2>
-            <p className="mt-5 max-w-lg text-sm leading-7 text-zinc-400">
+            <p className="mt-5 max-w-lg text-sm leading-7 text-muted">
               Search the catalog, preview a task, select what you need and run it with a clear confirmation. The same catalog works in the terminal and in the graphical window.
             </p>
             <Link href="/features" className="btn-ghost mt-7">
@@ -149,14 +149,14 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="grid grid-cols-2 gap-3">
-              <Image src="/screenshots/gui.png" alt="X Utility main window" width={1254} height={1573} className="h-full w-full rounded-md border border-white/10 object-cover" />
-              <Image src="/screenshots/detail.png" alt="X Utility task detail view" width={1254} height={1573} className="h-full w-full rounded-md border border-white/10 object-cover" />
+              <Image src="/screenshots/gui.png" alt="X Utility main window" width={1254} height={1573} className="h-full w-full rounded-md border border-line object-cover" />
+              <Image src="/screenshots/detail.png" alt="X Utility task detail view" width={1254} height={1573} className="h-full w-full rounded-md border border-line object-cover" />
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="section border-b border-white/10">
+      <section className="section border-b border-line">
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">Why X Utility</p>
@@ -168,9 +168,9 @@ export default function HomePage() {
               return (
                 <Reveal key={feature.title} delay={i * 0.06}>
                   <div className="card h-full">
-                    <Icon size={20} className="text-zinc-300" />
-                    <h3 className="mt-5 text-sm font-semibold text-white">{feature.title}</h3>
-                    <p className="mt-2 text-xs leading-6 text-zinc-500">{feature.description}</p>
+                    <Icon size={20} className="text-muted" />
+                    <h3 className="mt-5 text-sm font-semibold text-fg">{feature.title}</h3>
+                    <p className="mt-2 text-xs leading-6 text-muted">{feature.description}</p>
                   </div>
                 </Reveal>
               );
@@ -187,7 +187,7 @@ export default function HomePage() {
                 <div>
                   <p className="eyebrow">Open-source community</p>
                   <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">Built in the open. Better with you.</h2>
-                  <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-400">
+                  <p className="mt-5 max-w-xl text-sm leading-7 text-muted">
                     Every line of the engine, the task catalog and the installer scripts is public. Report a bug, add a tool to the catalog or improve the docs.
                   </p>
                   <div className="mt-7 flex flex-wrap gap-3">
@@ -206,9 +206,9 @@ export default function HomePage() {
                     { icon: Boxes, value: "210", label: "catalog entries" },
                   ].map((s) => (
                     <div key={s.label}>
-                      <s.icon size={18} className="mx-auto text-zinc-500" />
+                      <s.icon size={18} className="mx-auto text-muted" />
                       <p className="mt-2 text-lg font-semibold">{s.value}</p>
-                      <p className="text-[11px] text-zinc-600">{s.label}</p>
+                      <p className="text-[11px] text-subtle">{s.label}</p>
                     </div>
                   ))}
                 </div>

@@ -45,6 +45,10 @@ The official X Utility mark is in `public/logo/` (copied from the repository's `
 
 The visual style is Omarchy-inspired: pure black canvas, oversized tight typography, hairline borders, monospace labels and minimal cards. Geist and JetBrains Mono are loaded with `next/font`. Theme tokens live in `tailwind.config.ts` and `src/app/globals.css`.
 
+### Theme switcher
+
+The palette button in the navbar opens seven themes: Matte Black (default), Tokyo Night, Nord, Catppuccin, Gruvbox, Rosé Pine and White. Press **T** anywhere (outside a text field) to cycle to the next theme. The choice is saved in `localStorage` under `xutility-theme` and applied before first paint, so there is no flash on reload. Add or rename themes in `src/components/ThemeSwitcher.tsx` and define their CSS variables in `src/app/globals.css`.
+
 ## Download behaviour
 
 - `/api/releases` fetches the latest **stable, non-draft** release from `github.com/vedaprakashkamaraj/xulity`.

@@ -26,30 +26,30 @@ export default function GithubPage() {
         description="X Utility is developed in public. Read the source, report a problem, or send a patch — everything happens on GitHub."
       />
 
-      <section className="section border-b border-white/10">
+      <section className="section border-b border-line">
         <div className="container-x grid gap-4 sm:grid-cols-2">
           {links.map((link, i) => (
             <Reveal key={link.title} delay={(i % 2) * 0.06}>
               <a href={link.href} target="_blank" rel="noopener" className="card block h-full">
                 <div className="flex items-start justify-between">
                   <link.icon size={20} />
-                  <ExternalLink size={15} className="text-zinc-600" />
+                  <ExternalLink size={15} className="text-subtle" />
                 </div>
                 <h2 className="mt-6 text-lg font-semibold">{link.title}</h2>
-                <p className="mt-2 text-sm leading-6 text-zinc-500">{link.text}</p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-zinc-300">{link.cta} <ArrowRight size={14} /></span>
+                <p className="mt-2 text-sm leading-6 text-muted">{link.text}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-muted">{link.cta} <ArrowRight size={14} /></span>
               </a>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="section border-b border-white/10">
+      <section className="section border-b border-line">
         <div className="container-x grid gap-10 lg:grid-cols-2">
           <Reveal>
             <p className="eyebrow">Contribute</p>
             <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">Good first contributions.</h2>
-            <ul className="mt-6 space-y-4 text-sm leading-7 text-zinc-400">
+            <ul className="mt-6 space-y-4 text-sm leading-7 text-muted">
               <li>— Fix a typo or clarify an installation step in the docs.</li>
               <li>— Add a new app entry to the TOML catalog with a tested script.</li>
               <li>— Improve a GUI theme or keyboard shortcut.</li>
@@ -60,11 +60,11 @@ export default function GithubPage() {
             <div className="card">
               <FileText size={20} />
               <h3 className="mt-5 text-lg font-semibold">Before you open a pull request</h3>
-              <pre className="mono mt-4 overflow-x-auto rounded-md border border-white/15 bg-[#080808] p-4 text-[13px] text-zinc-300">{`git clone ${repoUrl}.git
+              <pre className="mono mt-4 overflow-x-auto rounded-md border border-line bg-panel p-4 text-[13px] text-muted">{`git clone ${repoUrl}.git
 cd xulity
 python3 xutil.py --check
 python3 build-onefile.py`}</pre>
-              <p className="mt-4 text-sm leading-6 text-zinc-500">
+              <p className="mt-4 text-sm leading-6 text-muted">
                 Describe what changed and how you tested it. See CONTRIBUTING.md for the full checklist.
               </p>
             </div>
@@ -74,16 +74,16 @@ python3 build-onefile.py`}</pre>
 
       <section className="section">
         <div className="container-x text-center">
-          <Star size={22} className="mx-auto text-zinc-500" />
+          <Star size={22} className="mx-auto text-muted" />
           <h2 className="mt-6 display text-[clamp(2.2rem,5vw,4.25rem)]">Star the project if it saved you time.</h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-zinc-400">
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-muted">
             {site.name} is maintained in spare time with help from the community. A star, a bug report or a new task all move it forward.
           </p>
           <a href={repoUrl} target="_blank" rel="noopener" className="btn mt-8">
             <Star size={15} /> Star on GitHub
           </a>
-          <div className="mt-8 text-xs text-zinc-600">
-            Prefer the documentation? <Link href="/docs" className="text-zinc-400 hover:text-white">Read the docs</Link>
+          <div className="mt-8 text-xs text-subtle">
+            Prefer the documentation? <Link href="/docs" className="text-muted hover:text-fg">Read the docs</Link>
           </div>
         </div>
       </section>

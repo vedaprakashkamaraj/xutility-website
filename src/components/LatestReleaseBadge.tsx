@@ -21,14 +21,14 @@ export default function LatestReleaseBadge() {
 
   if (!data.release) {
     return (
-      <a href={releasesUrl} target="_blank" rel="noopener" className="pill transition-colors hover:text-white">
+      <a href={releasesUrl} target="_blank" rel="noopener" className="pill transition-colors hover:text-fg">
         <span className="h-1.5 w-1.5 rounded-full bg-amber-400" /> Pre-release · no stable installer yet
       </a>
     );
   }
 
   return (
-    <a href={data.release.url} target="_blank" rel="noopener" className="pill transition-colors hover:text-white">
+    <a href={data.release.url} target="_blank" rel="noopener" className="pill transition-colors hover:text-fg">
       <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
       Latest {data.release.tag} · {formatDate(data.release.publishedAt)} <ExternalLink size={11} />
     </a>

@@ -59,18 +59,18 @@ export default function FeaturesPage() {
         description="X Utility turns a scattered collection of install commands and system tweaks into one searchable, previewable catalog that behaves the same on every platform."
       />
 
-      <section className="section border-b border-white/10">
+      <section className="section border-b border-line">
         <div className="container-x grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {site.features.map((feature, i) => {
             const Icon = icons[feature.icon] ?? Sparkles;
             return (
               <Reveal key={feature.title} delay={(i % 4) * 0.06}>
                 <div className="card h-full">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.05]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md border border-line bg-raised">
                     <Icon size={19} />
                   </div>
                   <h2 className="mt-6 text-base font-semibold">{feature.title}</h2>
-                  <p className="mt-2 text-sm leading-6 text-zinc-500">{feature.description}</p>
+                  <p className="mt-2 text-sm leading-6 text-muted">{feature.description}</p>
                 </div>
               </Reveal>
             );
@@ -78,7 +78,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="section border-b border-white/10">
+      <section className="section border-b border-line">
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">How it works</p>
@@ -88,10 +88,10 @@ export default function FeaturesPage() {
             {workflow.map((step, i) => (
               <Reveal key={step.title} delay={i * 0.08}>
                 <div className="card h-full">
-                  <div className="mono text-xs text-zinc-600">0{i + 1}</div>
+                  <div className="mono text-xs text-subtle">0{i + 1}</div>
                   <step.icon size={20} className="mt-4" />
                   <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-500">{step.text}</p>
+                  <p className="mt-2 text-sm leading-6 text-muted">{step.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -104,7 +104,7 @@ export default function FeaturesPage() {
           <Reveal>
             <p className="eyebrow">Platform coverage</p>
             <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">One catalog, three desktops.</h2>
-            <p className="mt-5 text-sm leading-7 text-zinc-400">
+            <p className="mt-5 text-sm leading-7 text-muted">
               Preconditions decide what you see. A Windows-only task stays hidden on Linux, an Apple Silicon build is not offered to Intel users, and every script is filtered before it reaches the queue.
             </p>
             <Link href="/docs" className="btn-ghost mt-7">
@@ -112,19 +112,19 @@ export default function FeaturesPage() {
             </Link>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="overflow-hidden rounded-2xl border border-white/10">
-              <div className="grid grid-cols-[1fr_80px_80px_80px] border-b border-white/10 bg-white/[0.04] px-5 py-4 text-[11px] uppercase tracking-[0.14em] text-zinc-500">
+            <div className="overflow-hidden rounded-2xl border border-line">
+              <div className="grid grid-cols-[1fr_80px_80px_80px] border-b border-line bg-raised px-5 py-4 text-[11px] uppercase tracking-[0.14em] text-muted">
                 <span>Capability</span>
                 <span className="text-center"><Monitor size={14} className="mx-auto" /> Win</span>
                 <span className="text-center"><Terminal size={14} className="mx-auto" /> Linux</span>
                 <span className="text-center"><Apple size={14} className="mx-auto" /> Mac</span>
               </div>
               {matrix.map((row) => (
-                <div key={row.feature} className="grid grid-cols-[1fr_80px_80px_80px] items-center border-b border-white/[0.06] px-5 py-4 text-sm last:border-0">
-                  <span className="text-zinc-300">{row.feature}</span>
+                <div key={row.feature} className="grid grid-cols-[1fr_80px_80px_80px] items-center border-b border-line px-5 py-4 text-sm last:border-0">
+                  <span className="text-muted">{row.feature}</span>
                   {[row.windows, row.linux, row.macos].map((yes, i) => (
                     <span key={i} className="text-center">
-                      <span className={`inline-block h-2 w-2 rounded-full ${yes ? "bg-emerald-400" : "bg-zinc-700"}`} />
+                      <span className={`inline-block h-2 w-2 rounded-full ${yes ? "bg-emerald-400" : "bg-line"}`} />
                     </span>
                   ))}
                 </div>
