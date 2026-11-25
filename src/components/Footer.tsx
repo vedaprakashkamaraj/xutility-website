@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Heart } from "lucide-react";
+import Logo from "./Logo";
 import { issuesUrl, repoUrl, site } from "@/lib/site";
 
 const columns = [
@@ -23,11 +24,11 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#080a0d]">
+    <footer className="border-t border-white/10 bg-[#070910]">
       <div className="container-x grid gap-12 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-white text-[13px] font-black text-black">X</span>
+            <Logo size={32} />
             <span className="font-semibold">{site.name}</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-6 text-zinc-500">{site.description}</p>

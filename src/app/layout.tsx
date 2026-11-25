@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/icon.png", apple: "/icon.png" },
+  icons: { icon: "/favicon.ico", shortcut: "/favicon.ico", apple: "/logo/xutil.png" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark">
-      <body className="min-h-screen bg-[#080a0d] text-zinc-100">
+      <body className="min-h-screen bg-ink text-zinc-100">
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -17,6 +17,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import Logo from "@/components/Logo";
 import LatestReleaseBadge from "@/components/LatestReleaseBadge";
 import { issuesUrl, repoUrl, site, type Platform } from "@/lib/site";
 
@@ -42,9 +43,10 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="grid-bg absolute inset-0" aria-hidden />
-        <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-white/[0.07] blur-[120px]" aria-hidden />
+        <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[#7aa2f7]/10 blur-[120px]" aria-hidden />
         <div className="container-x relative grid items-center gap-14 py-20 lg:grid-cols-[1.05fr_.95fr] lg:py-28">
           <Reveal>
+            <Logo size={68} className="logo-glow mb-8" />
             <div className="mb-6 flex flex-wrap items-center gap-3">
               <span className="pill"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Open source · MIT</span>
               <LatestReleaseBadge />
@@ -79,7 +81,7 @@ export default function HomePage() {
 
           <Reveal delay={0.12}>
             <div className="glass relative rounded-2xl p-2 shadow-glow">
-              <div className="rounded-xl border border-white/10 bg-[#0b0e12] p-4">
+              <div className="rounded-xl border border-white/10 bg-[#0a0e17] p-4">
                 <div className="mb-4 flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />

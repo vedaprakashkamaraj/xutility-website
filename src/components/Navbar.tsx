@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
+import Logo from "./Logo";
 import { site } from "@/lib/site";
 
 export default function Navbar() {
@@ -14,12 +15,10 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#080a0d]/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#070910]/85 backdrop-blur-xl">
       <div className="container-x flex h-16 items-center justify-between">
         <Link href="/" className="group flex items-center gap-2.5" aria-label="X Utility home">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-white text-[13px] font-black text-black transition-transform group-hover:rotate-6">
-            X
-          </span>
+          <Logo size={34} className="transition-transform duration-200 group-hover:rotate-6" />
           <span className="text-[15px] font-semibold tracking-tight">{site.name}</span>
           <span className="hidden text-[11px] text-zinc-600 sm:inline">/ official</span>
         </Link>

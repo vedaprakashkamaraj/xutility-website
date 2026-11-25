@@ -39,6 +39,10 @@ Set `NEXT_PUBLIC_SITE_URL` to your deployed origin so metadata, canonical URLs, 
 NEXT_PUBLIC_SITE_URL=https://your-domain.example npm run build
 ```
 
+## Branding and theme
+
+The official X Utility mark is in `public/logo/` (copied from the repository's `assets/xutil.svg`, `.png` and `.ico`). It appears in the navigation, footer, home hero, favicon and Open Graph image. The night theme colours are defined in `tailwind.config.ts` and `src/app/globals.css`.
+
 ## Download behaviour
 
 - `/api/releases` fetches the latest **stable, non-draft** release from `github.com/vedaprakashkamaraj/xulity`.

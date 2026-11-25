@@ -5,11 +5,13 @@
 :root {
   --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
-  --bg: #080a0d;
-  --panel: #101418;
-  --line: #242b33;
+  --bg: #070910;
+  --panel: #0d121c;
+  --line: #1d2534;
   --fg: #f5f7fa;
   --muted: #98a2ae;
+  --night-blue: #7aa2f7;
+  --night-green: #9ece6a;
 }
 
 * { border-color: var(--line); }
@@ -20,19 +22,31 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1px 1px at 8% 14%, rgba(255,255,255,.34), transparent),
+    radial-gradient(1px 1px at 22% 62%, rgba(255,255,255,.22), transparent),
+    radial-gradient(1.5px 1.5px at 38% 28%, rgba(122,162,247,.45), transparent),
+    radial-gradient(1px 1px at 54% 76%, rgba(255,255,255,.26), transparent),
+    radial-gradient(1px 1px at 68% 18%, rgba(255,255,255,.2), transparent),
+    radial-gradient(1.5px 1.5px at 84% 52%, rgba(122,162,247,.38), transparent),
+    radial-gradient(1px 1px at 93% 82%, rgba(255,255,255,.28), transparent),
+    radial-gradient(1px 1px at 15% 91%, rgba(255,255,255,.18), transparent),
+    radial-gradient(1000px 620px at 50% -12%, rgba(122,162,247,.13), transparent 70%),
+    radial-gradient(760px 460px at 100% 0%, rgba(158,206,106,.05), transparent 65%);
+  background-attachment: fixed;
   color: var(--fg);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-::selection { background: #ffffff; color: #080a0d; }
+::selection { background: var(--night-blue); color: #070910; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: #2a3139; border-radius: 999px; border: 2px solid var(--bg); }
-::-webkit-scrollbar-thumb:hover { background: #3d4650; }
+::-webkit-scrollbar-thumb { background: #243049; border-radius: 999px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: #35456a; }
 
 @layer components {
   .container-x {
@@ -44,9 +58,13 @@ body {
   }
 
   .glass {
-    background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+    background: linear-gradient(160deg, rgba(122,162,247,.07), rgba(255,255,255,.015));
     border: 1px solid rgba(255,255,255,.09);
     backdrop-filter: blur(14px);
+  }
+
+  .logo-glow {
+    filter: drop-shadow(0 0 22px rgba(122,162,247,.45));
   }
 
   .card {
@@ -74,7 +92,7 @@ body {
   }
 
   .gradient-text {
-    background: linear-gradient(100deg, #ffffff 10%, #9ca3af 55%, #ffffff 95%);
+    background: linear-gradient(100deg, #ffffff 10%, #a8c0f9 55%, #ffffff 95%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
