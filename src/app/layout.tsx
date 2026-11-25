@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`dark ${geist.variable} ${jetbrains.variable}`} suppressHydrationWarning>
+    <html lang="en" data-theme="tokyo-night" className={`dark ${geist.variable} ${jetbrains.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-ink text-fg">
         <script
           dangerouslySetInnerHTML={{

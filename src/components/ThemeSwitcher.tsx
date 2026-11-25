@@ -22,7 +22,7 @@ function applyTheme(id: ThemeId) {
 }
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<ThemeId>("matte-black");
+  const [theme, setTheme] = useState<ThemeId>("tokyo-night");
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -30,7 +30,7 @@ export default function ThemeSwitcher() {
     const stored = window.localStorage.getItem(STORAGE_KEY) as ThemeId | null;
     const current = themes.some((t) => t.id === stored)
       ? (stored as ThemeId)
-      : ((document.documentElement.dataset.theme as ThemeId) || "matte-black");
+      : ((document.documentElement.dataset.theme as ThemeId) || "tokyo-night");
     setTheme(current);
     document.documentElement.dataset.theme = current;
   }, []);

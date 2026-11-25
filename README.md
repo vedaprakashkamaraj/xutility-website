@@ -47,7 +47,7 @@ The visual style is Omarchy-inspired: pure black canvas, oversized tight typogra
 
 ### Theme switcher
 
-The palette button in the navbar opens seven themes: Matte Black (default), Tokyo Night, Nord, Catppuccin, Gruvbox, Rosé Pine and White. Press **T** anywhere (outside a text field) to cycle to the next theme. The choice is saved in `localStorage` under `xutility-theme` and applied before first paint, so there is no flash on reload. Add or rename themes in `src/components/ThemeSwitcher.tsx` and define their CSS variables in `src/app/globals.css`.
+The palette button in the navbar opens seven themes: Tokyo Night (default), Matte Black, Nord, Catppuccin, Gruvbox, Rosé Pine and White. Press **T** anywhere (outside a text field) to cycle to the next theme. The choice is saved in `localStorage` under `xutility-theme` and applied before first paint, so there is no flash on reload. Add or rename themes in `src/components/ThemeSwitcher.tsx` and define their CSS variables in `src/app/globals.css`.
 
 ### Matrix opening and ambient rain
 
