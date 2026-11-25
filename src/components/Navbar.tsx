@@ -15,23 +15,23 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#070910]/85 backdrop-blur-xl">
-      <div className="container-x flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-md">
+      <div className="container-x flex h-14 items-center justify-between">
         <Link href="/" className="group flex items-center gap-2.5" aria-label="X Utility home">
-          <Logo size={34} className="transition-transform duration-200 group-hover:rotate-6" />
-          <span className="text-[15px] font-semibold tracking-tight">{site.name}</span>
-          <span className="hidden text-[11px] text-zinc-600 sm:inline">/ official</span>
+          <Logo size={28} />
+          <span className="text-sm font-medium tracking-tight">{site.name}</span>
+          <span className="hidden font-mono text-[10px] uppercase tracking-wider text-zinc-600 sm:inline">/ official</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
           {site.nav.map((item) => {
             const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-lg px-3 py-2 text-sm transition-colors ${
-                  active ? "bg-white/10 text-white" : "text-zinc-400 hover:bg-white/5 hover:text-white"
+                className={`border-b py-1 font-mono text-[12px] uppercase tracking-[0.1em] transition-colors ${
+                  active ? "border-white text-white" : "border-transparent text-zinc-500 hover:text-white"
                 }`}
               >
                 {item.label}
@@ -41,13 +41,13 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/download" className="btn hidden !px-4 !py-2 sm:inline-flex">
-            <Download size={15} /> Download
+          <Link href="/download" className="btn hidden !px-3 !py-1.5 !text-xs sm:inline-flex">
+            <Download size={14} /> Install
           </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-zinc-300 md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-md border border-white/15 text-zinc-300 md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
@@ -70,8 +70,8 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-lg px-3 py-2.5 text-sm ${
-                    pathname === item.href ? "bg-white/10 text-white" : "text-zinc-400"
+                  className={`border-b border-white/10 py-3 font-mono text-xs uppercase tracking-wider ${
+                    pathname === item.href ? "text-white" : "text-zinc-500"
                   }`}
                 >
                   {item.label}

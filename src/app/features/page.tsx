@@ -66,7 +66,7 @@ export default function FeaturesPage() {
             return (
               <Reveal key={feature.title} delay={(i % 4) * 0.06}>
                 <div className="card h-full">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/[0.05]">
                     <Icon size={19} />
                   </div>
                   <h2 className="mt-6 text-base font-semibold">{feature.title}</h2>
@@ -82,7 +82,7 @@ export default function FeaturesPage() {
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">How it works</p>
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">From catalog to command, in three steps.</h2>
+            <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">From catalog to command, in three steps.</h2>
           </Reveal>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {workflow.map((step, i) => (
@@ -103,7 +103,7 @@ export default function FeaturesPage() {
         <div className="container-x grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
           <Reveal>
             <p className="eyebrow">Platform coverage</p>
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">One catalog, three desktops.</h2>
+            <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">One catalog, three desktops.</h2>
             <p className="mt-5 text-sm leading-7 text-zinc-400">
               Preconditions decide what you see. A Windows-only task stays hidden on Linux, an Apple Silicon build is not offered to Intel users, and every script is filtered before it reaches the queue.
             </p>

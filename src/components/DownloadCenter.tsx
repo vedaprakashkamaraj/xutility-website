@@ -37,7 +37,7 @@ function AssetCard({ asset, copied, onCopy }: { asset: ReleaseAsset; copied: boo
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
-      className="rounded-xl border border-white/10 bg-white/[0.025] p-5"
+      className="rounded-md border border-white/10 bg-transparent p-5"
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div className="min-w-0">
@@ -55,7 +55,7 @@ function AssetCard({ asset, copied, onCopy }: { asset: ReleaseAsset; copied: boo
       </div>
 
       {asset.checksum && (
-        <div className="mt-4 flex items-center gap-2 rounded-lg border border-white/10 bg-black/40 px-3 py-2">
+        <div className="mt-4 flex items-center gap-2 rounded-lg border border-white/10 bg-[#080808] px-3 py-2">
           <ShieldCheck size={14} className="shrink-0 text-zinc-500" />
           <code className="mono min-w-0 flex-1 truncate text-[11px] text-zinc-400" title={asset.checksum}>
             SHA-256 {asset.checksum}
@@ -132,10 +132,10 @@ export default function DownloadCenter() {
                 role="tab"
                 aria-selected={active}
                 onClick={() => setPlatform(key)}
-                className={`relative flex items-center gap-2 rounded-xl border px-4 py-3 text-sm transition-colors ${
+                className={`relative flex items-center gap-2 rounded-md border px-4 py-3 text-sm transition-colors ${
                   active
                     ? "border-white/25 bg-white text-black"
-                    : "border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/25 hover:text-white"
+                    : "border-white/10 bg-transparent text-zinc-400 hover:border-white/25 hover:text-white"
                 }`}
               >
                 <Icon size={16} />
@@ -145,7 +145,7 @@ export default function DownloadCenter() {
                     detected
                   </span>
                 )}
-                {active && <motion.span layoutId="tab-underline" className="absolute inset-x-3 -bottom-px h-px bg-black/40" />}
+                {active && <motion.span layoutId="tab-underline" className="absolute inset-x-3 -bottom-px h-px bg-[#080808]" />}
               </button>
             );
           })}
@@ -156,7 +156,7 @@ export default function DownloadCenter() {
             {loading ? (
               <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-3">
                 {[0, 1, 2].map((i) => (
-                  <div key={i} className="h-24 animate-pulse rounded-xl border border-white/10 bg-white/[0.03]" />
+                  <div key={i} className="h-24 animate-pulse rounded-md border border-white/10 bg-transparent" />
                 ))}
               </motion.div>
             ) : error ? (
@@ -212,7 +212,7 @@ export default function DownloadCenter() {
         </div>
 
         {checksums.length > 0 && (
-          <div className="mt-8 rounded-xl border border-white/10 bg-black/30 p-5">
+          <div className="mt-8 rounded-md border border-white/10 bg-[#080808] p-5">
             <h4 className="flex items-center gap-2 text-sm font-semibold text-white">
               <ShieldCheck size={16} /> Verify your download
             </h4>
@@ -263,7 +263,7 @@ export default function DownloadCenter() {
           </ol>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-xs leading-6 text-zinc-500">
+        <div className="rounded-2xl border border-white/10 bg-transparent p-5 text-xs leading-6 text-zinc-500">
           <p className="font-semibold text-zinc-300">Safety note</p>
           <p className="mt-2">
             This website only links to files published by the maintainers. It never installs, executes or modifies software on your computer.

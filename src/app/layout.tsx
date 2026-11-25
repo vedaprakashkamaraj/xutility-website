@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://xutility.example.com";
 
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${geist.variable} ${jetbrains.variable}`}>
       <body className="min-h-screen bg-ink text-zinc-100">
         <Navbar />
         <main>{children}</main>

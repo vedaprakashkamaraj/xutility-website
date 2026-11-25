@@ -41,7 +41,9 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.example npm run build
 
 ## Branding and theme
 
-The official X Utility mark is in `public/logo/` (copied from the repository's `assets/xutil.svg`, `.png` and `.ico`). It appears in the navigation, footer, home hero, favicon and Open Graph image. The night theme colours are defined in `tailwind.config.ts` and `src/app/globals.css`.
+The official X Utility mark is in `public/logo/` (copied from the repository's `assets/xutil.svg`, `.png` and `.ico`). It appears in the navigation, footer, home hero, favicon and Open Graph image.
+
+The visual style is Omarchy-inspired: pure black canvas, oversized tight typography, hairline borders, monospace labels and minimal cards. Geist and JetBrains Mono are loaded with `next/font`. Theme tokens live in `tailwind.config.ts` and `src/app/globals.css`.
 
 ## Download behaviour
 

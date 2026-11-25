@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Heart } from "lucide-react";
+import { Github } from "lucide-react";
 import Logo from "./Logo";
 import { issuesUrl, repoUrl, site } from "@/lib/site";
 
@@ -24,12 +24,12 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#070910]">
-      <div className="container-x grid gap-12 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+    <footer className="border-t border-white/10 bg-black">
+      <div className="container-x grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Link href="/" className="flex items-center gap-2.5">
-            <Logo size={32} />
-            <span className="font-semibold">{site.name}</span>
+            <Logo size={28} />
+            <span className="font-medium">{site.name}</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-6 text-zinc-500">{site.description}</p>
           <a
@@ -44,7 +44,7 @@ export default function Footer() {
 
         {columns.map((col) => (
           <div key={col.title}>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">{col.title}</h3>
+            <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-600">{col.title}</h3>
             <ul className="mt-5 space-y-3">
               {col.links.map((link) => (
                 <li key={link.label}>
@@ -58,11 +58,9 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="container-x flex flex-col gap-3 border-t border-white/10 py-6 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+      <div className="container-x flex flex-col gap-3 border-t border-white/10 py-7 font-mono text-[11px] text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
         <span>© {new Date().getFullYear()} X Utility. Open source, built in the open.</span>
-        <span className="inline-flex items-center gap-1.5">
-          Made with <Heart size={12} className="text-zinc-500" /> for people who like clean tools.
-        </span>
+        <span>One Utility. Every Platform.</span>
       </div>
     </footer>
   );

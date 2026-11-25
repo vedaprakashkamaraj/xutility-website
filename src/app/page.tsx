@@ -43,21 +43,21 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="grid-bg absolute inset-0" aria-hidden />
-        <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[#7aa2f7]/10 blur-[120px]" aria-hidden />
-        <div className="container-x relative grid items-center gap-14 py-20 lg:grid-cols-[1.05fr_.95fr] lg:py-28">
+        <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-white/[0.05] blur-[120px]" aria-hidden />
+        <div className="container-x relative grid items-center gap-14 py-24 lg:grid-cols-[1.05fr_.95fr] lg:py-32">
           <Reveal>
-            <Logo size={68} className="logo-glow mb-8" />
+            <Logo size={72} className="mb-9" />
             <div className="mb-6 flex flex-wrap items-center gap-3">
               <span className="pill"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Open source · MIT</span>
               <LatestReleaseBadge />
             </div>
 
-            <h1 className="text-5xl font-semibold leading-[1.03] tracking-[-0.055em] sm:text-6xl lg:text-[76px]">
+            <h1 className="display text-[clamp(3.4rem,9vw,7.5rem)]">
               One Utility.<br />
-              <span className="gradient-text">Every Platform.</span>
+              <span className="text-zinc-400">Every Platform.</span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-base leading-7 text-zinc-400 sm:text-lg">
+            <p className="mt-8 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg">
               {site.description} Built for people who want one clean way to set up a machine, install apps and keep the system in shape.
             </p>
 
@@ -80,8 +80,8 @@ export default function HomePage() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <div className="glass relative rounded-2xl p-2 shadow-glow">
-              <div className="rounded-xl border border-white/10 bg-[#0a0e17] p-4">
+            <div className="panel relative rounded-md p-2">
+              <div className="rounded-sm border border-white/10 bg-[#050505] p-4">
                 <div className="mb-4 flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
@@ -111,7 +111,7 @@ export default function HomePage() {
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">Supported platforms</p>
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">Built once. Runs where you work.</h2>
+            <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">Built once. Runs where you work.</h2>
           </Reveal>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {platformCards.map((card, i) => {
@@ -119,7 +119,7 @@ export default function HomePage() {
               return (
                 <Reveal key={card.key} delay={i * 0.08}>
                   <Link href={`/download#${card.key}`} className="card block h-full">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-md border border-white/10 bg-white/[0.05]">
                       <Icon size={20} />
                     </div>
                     <h3 className="mt-6 text-lg font-semibold">{card.blurb}</h3>
@@ -139,7 +139,7 @@ export default function HomePage() {
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <p className="eyebrow">Product preview</p>
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">A toolbox that stays out of the way.</h2>
+            <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">A toolbox that stays out of the way.</h2>
             <p className="mt-5 max-w-lg text-sm leading-7 text-zinc-400">
               Search the catalog, preview a task, select what you need and run it with a clear confirmation. The same catalog works in the terminal and in the graphical window.
             </p>
@@ -149,8 +149,8 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="grid grid-cols-2 gap-3">
-              <Image src="/screenshots/gui.png" alt="X Utility main window" width={1254} height={1573} className="h-full w-full rounded-xl border border-white/10 object-cover" />
-              <Image src="/screenshots/detail.png" alt="X Utility task detail view" width={1254} height={1573} className="h-full w-full rounded-xl border border-white/10 object-cover" />
+              <Image src="/screenshots/gui.png" alt="X Utility main window" width={1254} height={1573} className="h-full w-full rounded-md border border-white/10 object-cover" />
+              <Image src="/screenshots/detail.png" alt="X Utility task detail view" width={1254} height={1573} className="h-full w-full rounded-md border border-white/10 object-cover" />
             </div>
           </Reveal>
         </div>
@@ -160,7 +160,7 @@ export default function HomePage() {
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">Why X Utility</p>
-            <h2 className="max-w-2xl text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">Small engine, serious reach.</h2>
+            <h2 className="max-w-2xl display text-[clamp(2.2rem,5vw,4.25rem)]">Small engine, serious reach.</h2>
           </Reveal>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {site.features.slice(0, 4).map((feature, i) => {
@@ -182,11 +182,11 @@ export default function HomePage() {
       <section className="section">
         <div className="container-x">
           <Reveal>
-            <div className="glass rounded-3xl p-8 sm:p-12">
+            <div className="panel rounded-md p-8 sm:p-12">
               <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
                 <div>
                   <p className="eyebrow">Open-source community</p>
-                  <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">Built in the open. Better with you.</h2>
+                  <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">Built in the open. Better with you.</h2>
                   <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-400">
                     Every line of the engine, the task catalog and the installer scripts is public. Report a bug, add a tool to the catalog or improve the docs.
                   </p>

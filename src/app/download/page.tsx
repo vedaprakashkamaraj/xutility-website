@@ -26,7 +26,7 @@ export default function DownloadPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.015]">
+      <section className="border-y border-white/10 bg-[#050505]">
         <div className="container-x grid gap-6 py-14 md:grid-cols-3">
           <Reveal>
             <div className="card h-full">
@@ -69,8 +69,8 @@ export default function DownloadPage() {
       <section className="section">
         <div className="container-x text-center">
           <p className="eyebrow">Prefer the terminal?</p>
-          <h2 className="text-3xl font-semibold tracking-[-0.03em]">Install from source in two commands.</h2>
-          <div className="mono mx-auto mt-7 max-w-xl rounded-xl border border-white/10 bg-black/50 p-5 text-left text-sm text-zinc-300">
+          <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">Install from source in two commands.</h2>
+          <div className="mono mx-auto mt-7 max-w-xl rounded-md border border-white/15 bg-[#080808] p-5 text-left text-sm text-zinc-300">
             <p><span className="text-zinc-600">$</span> git clone {repoUrl}.git</p>
             <p><span className="text-zinc-600">$</span> cd xulity &amp;&amp; python3 xutil.py --gui</p>
           </div>

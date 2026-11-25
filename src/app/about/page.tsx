@@ -22,7 +22,7 @@ export default function AboutPage() {
       <section className="section border-b border-white/10">
         <div className="container-x grid gap-10 lg:grid-cols-2">
           <Reveal>
-            <h2 className="text-3xl font-semibold tracking-[-0.03em]">What is X Utility?</h2>
+            <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">What is X Utility?</h2>
             <p className="mt-6 text-sm leading-7 text-zinc-400">
               X Utility is an open-source application that reads a catalog of installation and maintenance tasks, filters them for the current system, and runs the ones you choose. It works as a keyboard-first terminal app and as a graphical window.
             </p>
@@ -31,7 +31,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="glass rounded-2xl p-7">
+            <div className="panel rounded-md p-7">
               <p className="eyebrow">In one sentence</p>
               <p className="text-2xl font-medium leading-snug tracking-[-0.02em]">
                 {site.tagline} — without the duct tape.
@@ -52,7 +52,7 @@ export default function AboutPage() {
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">Why it exists</p>
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">Because setup should be boring.</h2>
+            <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">Because setup should be boring.</h2>
           </Reveal>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {[
@@ -76,7 +76,7 @@ export default function AboutPage() {
         <div className="container-x grid gap-10 lg:grid-cols-[1fr_1.1fr]">
           <Reveal>
             <p className="eyebrow">Roadmap</p>
-            <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">What comes next.</h2>
+            <h2 className="display text-[clamp(2.2rem,5vw,4.25rem)]">What comes next.</h2>
             <p className="mt-5 text-sm leading-7 text-zinc-400">
               The roadmap is intentionally small and public. If something matters to you, open an issue and help shape it.
             </p>
@@ -105,7 +105,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container-x text-center">
           <p className="eyebrow">Open-source philosophy</p>
-          <h2 className="mx-auto max-w-3xl text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+          <h2 className="mx-auto max-w-3xl display text-[clamp(2.2rem,5vw,4.25rem)]">
             No lock-in, no hidden telemetry, no mystery scripts.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-zinc-400">

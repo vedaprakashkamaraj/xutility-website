@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
-  --bg: #070910;
-  --panel: #0d121c;
-  --line: #1d2534;
-  --fg: #f5f7fa;
-  --muted: #98a2ae;
-  --night-blue: #7aa2f7;
-  --night-green: #9ece6a;
+  --font-sans: var(--font-geist), "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", SFMono-Regular, Consolas, monospace;
+  --bg: #000000;
+  --panel: #080808;
+  --line: rgba(255, 255, 255, 0.14);
+  --fg: #ffffff;
+  --muted: #a1a1aa;
 }
 
 * { border-color: var(--line); }
@@ -22,106 +20,90 @@ html {
 }
 
 body {
-  background-color: var(--bg);
-  background-image:
-    radial-gradient(1px 1px at 8% 14%, rgba(255,255,255,.34), transparent),
-    radial-gradient(1px 1px at 22% 62%, rgba(255,255,255,.22), transparent),
-    radial-gradient(1.5px 1.5px at 38% 28%, rgba(122,162,247,.45), transparent),
-    radial-gradient(1px 1px at 54% 76%, rgba(255,255,255,.26), transparent),
-    radial-gradient(1px 1px at 68% 18%, rgba(255,255,255,.2), transparent),
-    radial-gradient(1.5px 1.5px at 84% 52%, rgba(122,162,247,.38), transparent),
-    radial-gradient(1px 1px at 93% 82%, rgba(255,255,255,.28), transparent),
-    radial-gradient(1px 1px at 15% 91%, rgba(255,255,255,.18), transparent),
-    radial-gradient(1000px 620px at 50% -12%, rgba(122,162,247,.13), transparent 70%),
-    radial-gradient(760px 460px at 100% 0%, rgba(158,206,106,.05), transparent 65%);
-  background-attachment: fixed;
+  background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
-::selection { background: var(--night-blue); color: #070910; }
+::selection { background: #ffffff; color: #000000; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: #243049; border-radius: 999px; border: 2px solid var(--bg); }
-::-webkit-scrollbar-thumb:hover { background: #35456a; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 999px; border: 2px solid #000; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
 
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
   }
 
   .section {
-    @apply py-20 sm:py-28;
+    @apply py-24 sm:py-32;
   }
 
-  .glass {
-    background: linear-gradient(160deg, rgba(122,162,247,.07), rgba(255,255,255,.015));
-    border: 1px solid rgba(255,255,255,.09);
-    backdrop-filter: blur(14px);
-  }
-
-  .logo-glow {
-    filter: drop-shadow(0 0 22px rgba(122,162,247,.45));
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
   }
 
   .card {
-    @apply rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition-colors duration-200;
+    @apply rounded-md border border-white/[0.14] bg-transparent p-6 transition-colors duration-150;
   }
 
   .card:hover {
-    @apply border-white/25 bg-white/[0.045];
+    @apply border-white/40;
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/90;
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-black transition-colors duration-150 hover:bg-white/80;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white/35 hover:bg-white/[0.08];
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/25 bg-transparent px-5 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:border-white/60 hover:bg-white/[0.06];
   }
 
   .pill {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-400;
+    @apply inline-flex items-center gap-2 rounded-sm border border-white/20 bg-transparent px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-zinc-400;
   }
 
   .eyebrow {
-    @apply mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500;
-  }
-
-  .gradient-text {
-    background: linear-gradient(100deg, #ffffff 10%, #a8c0f9 55%, #ffffff 95%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    @apply mb-5 font-mono text-xs font-medium uppercase tracking-[0.22em] text-zinc-500;
   }
 
   .hairline {
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+    background: var(--line);
     height: 1px;
   }
 
   .mono {
     font-family: var(--font-mono);
   }
+
+  .display {
+    @apply font-semibold tracking-[-0.065em];
+    line-height: 0.98;
+  }
 }
 
 .prose-x h3 { @apply mt-8 text-lg font-semibold text-white; }
 .prose-x p { @apply mt-3 text-sm leading-7 text-zinc-400; }
 .prose-x ul { @apply mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-400; }
-.prose-x code { @apply rounded bg-white/10 px-1.5 py-0.5 text-[13px] text-zinc-100; }
-.prose-x pre { @apply mt-4 overflow-x-auto rounded-xl border border-white/10 bg-black/60 p-4 text-[13px] text-zinc-300; }
+.prose-x code { @apply rounded-sm bg-white/10 px-1.5 py-0.5 font-mono text-[13px] text-zinc-100; }
+.prose-x pre { @apply mt-4 overflow-x-auto rounded-md border border-white/15 bg-[#080808] p-4 font-mono text-[13px] text-zinc-300; }
 .prose-x pre code { @apply bg-transparent p-0; }
-.prose-x a { @apply text-white underline decoration-white/30 underline-offset-4 hover:decoration-white; }
+.prose-x a { @apply text-white underline decoration-white/40 underline-offset-4 hover:decoration-white; }
 
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 65% 55% at 50% 0%, black, transparent 80%);
+    linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 80%);
 }
 
 @media (prefers-reduced-motion: reduce) {

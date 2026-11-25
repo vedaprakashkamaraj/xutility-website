@@ -122,7 +122,7 @@ chmod +x xutil.AppImage && ./xutil.AppImage`}</code></pre>
               </h2>
               <div className="mt-5 space-y-3">
                 {faqs.map((faq) => (
-                  <details key={faq.q} className="group rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <details key={faq.q} className="group rounded-md border border-white/15 bg-transparent p-4">
                     <summary className="cursor-pointer list-none text-sm font-medium text-white marker:hidden">
                       <span className="flex items-center justify-between gap-4">{faq.q}<span className="text-zinc-600 group-open:rotate-45">+</span></span>
                     </summary>
