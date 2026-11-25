@@ -16,6 +16,9 @@
   --subtle: #71717a;
   --accent: #ffffff;
   --accent-ink: #000000;
+  /* Sampled from the official X Utility mark in assets/xutil.svg. */
+  --logo-blue-rgb: 122, 162, 247;
+  --logo-green-rgb: 158, 206, 106;
 }
 
 [data-theme="tokyo-night"] {
@@ -211,7 +214,12 @@ body {
   position: absolute;
   inset: -28%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 255, 65, 0.16), transparent 66%);
+  background: radial-gradient(
+    circle,
+    rgba(var(--logo-blue-rgb), 0.16),
+    rgba(var(--logo-green-rgb), 0.05) 46%,
+    transparent 68%
+  );
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -224,7 +232,7 @@ body {
   object-fit: contain;
   opacity: 0.12;
   transform: scale(0.94);
-  filter: drop-shadow(0 0 6px rgba(0, 255, 65, 0.2));
+  filter: drop-shadow(0 0 6px rgba(var(--logo-blue-rgb), 0.2));
   transition: opacity 0.65s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.7s ease;
 }
 
@@ -232,7 +240,7 @@ body {
 .intro-logo-shell.is-exiting .intro-logo-image {
   opacity: 1;
   transform: scale(1);
-  filter: drop-shadow(0 0 12px rgba(0, 255, 65, 0.55)) drop-shadow(0 0 32px rgba(0, 255, 65, 0.18));
+  filter: drop-shadow(0 0 12px rgba(var(--logo-blue-rgb), 0.55)) drop-shadow(0 0 32px rgba(var(--logo-green-rgb), 0.18));
 }
 
 .intro-logo-shell.is-revealed .intro-logo-image {
@@ -253,9 +261,9 @@ body {
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(0, 255, 65, 0.06) 42%,
-    rgba(0, 255, 65, 0.55) 50%,
-    rgba(0, 255, 65, 0.06) 58%,
+    rgba(var(--logo-blue-rgb), 0.06) 42%,
+    rgba(var(--logo-blue-rgb), 0.6) 50%,
+    rgba(var(--logo-green-rgb), 0.12) 58%,
     transparent 100%
   );
   background-size: 100% 240%;
@@ -286,18 +294,18 @@ body {
 
 .intro-brackets::before {
   background:
-    linear-gradient(#00ff41, #00ff41) left top / 20px 1px no-repeat,
-    linear-gradient(#00ff41, #00ff41) left top / 1px 20px no-repeat,
-    linear-gradient(#00ff41, #00ff41) right top / 20px 1px no-repeat,
-    linear-gradient(#00ff41, #00ff41) right top / 1px 20px no-repeat,
-    linear-gradient(#00ff41, #00ff41) left bottom / 20px 1px no-repeat,
-    linear-gradient(#00ff41, #00ff41) left bottom / 1px 20px no-repeat,
-    linear-gradient(#00ff41, #00ff41) right bottom / 20px 1px no-repeat,
-    linear-gradient(#00ff41, #00ff41) right bottom / 1px 20px no-repeat;
+    linear-gradient(#7aa2f7, #7aa2f7) left top / 20px 1px no-repeat,
+    linear-gradient(#7aa2f7, #7aa2f7) left top / 1px 20px no-repeat,
+    linear-gradient(#7aa2f7, #7aa2f7) right top / 20px 1px no-repeat,
+    linear-gradient(#7aa2f7, #7aa2f7) right top / 1px 20px no-repeat,
+    linear-gradient(#7aa2f7, #7aa2f7) left bottom / 20px 1px no-repeat,
+    linear-gradient(#7aa2f7, #7aa2f7) left bottom / 1px 20px no-repeat,
+    linear-gradient(#7aa2f7, #7aa2f7) right bottom / 20px 1px no-repeat,
+    linear-gradient(#7aa2f7, #7aa2f7) right bottom / 1px 20px no-repeat;
 }
 
 .intro-brackets::after {
-  border: 1px solid rgba(0, 255, 65, 0.08);
+  border: 1px solid rgba(var(--logo-blue-rgb), 0.08);
 }
 
 .intro-logo-shell.is-revealed .intro-brackets {
@@ -317,12 +325,12 @@ body {
 @keyframes intro-glitch {
   0%, 88%, 100% {
     transform: translate3d(0, 0, 0) scale(1);
-    filter: drop-shadow(0 0 12px rgba(0, 255, 65, 0.55)) drop-shadow(0 0 32px rgba(0, 255, 65, 0.18));
+    filter: drop-shadow(0 0 12px rgba(var(--logo-blue-rgb), 0.55)) drop-shadow(0 0 32px rgba(var(--logo-green-rgb), 0.18));
     opacity: 1;
   }
   89% {
     transform: translate3d(-2px, 0, 0) scale(1.01);
-    filter: drop-shadow(3px 0 0 rgba(0, 255, 65, 0.5)) drop-shadow(-3px 0 0 rgba(122, 162, 247, 0.3));
+    filter: drop-shadow(3px 0 0 rgba(var(--logo-green-rgb), 0.55)) drop-shadow(-3px 0 0 rgba(var(--logo-blue-rgb), 0.45));
   }
   91% { transform: translate3d(2px, 0, 0) scale(0.995); }
   93% { transform: translate3d(-1px, 1px, 0) scale(1); opacity: 0.86; }

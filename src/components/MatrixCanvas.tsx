@@ -33,6 +33,10 @@ interface Particle {
 const GLYPHS =
   "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789XUTILITY<>/{}[]$=+*#";
 const LOGO_SRC = "/logo/xutil.svg";
+// Exact colours from the original logo: blue border/chevron, green underscore.
+const LOGO_BLUE = "122,162,247";
+const LOGO_GREEN = "158,206,106";
+const LOGO_GREEN_BRIGHT = "196,232,150";
 
 function glyph(): string {
   return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
@@ -179,8 +183,8 @@ export default function MatrixCanvas({ mode, className = "", targetRef, active =
         const y = particle.y + (particle.ty - particle.y) * eased;
         const alpha = t < 1 ? Math.min(1, t * 3) * 0.9 : Math.max(0, 1 - (t - 1) / 0.4) * 0.65;
 
-        ctx!.fillStyle = `rgba(0,255,65,${alpha})`;
-        ctx!.shadowColor = "rgba(0,255,65,.85)";
+        ctx!.fillStyle = `rgba(${LOGO_GREEN},${alpha})`;
+        ctx!.shadowColor = `rgba(${LOGO_BLUE},.7)`;
         ctx!.shadowBlur = 6;
         ctx!.fillText(particle.glyph, x, y);
         ctx!.shadowBlur = 0;
@@ -205,9 +209,12 @@ export default function MatrixCanvas({ mode, className = "", targetRef, active =
           if (y < -fontSize || y > height) continue;
           const alpha = (1 - index / drop.trail) * drop.brightness * (isIntro ? 0.5 : 0.2);
           const char = drop.glyphs[(Math.floor(drop.y - index) + column * 7 + 4096) % drop.glyphs.length];
-          ctx!.fillStyle = index === 0 ? `rgba(175,255,205,${Math.min(1, alpha * 1.7)})` : `rgba(0,255,65,${alpha})`;
+          ctx!.fillStyle =
+            index === 0
+              ? `rgba(${LOGO_GREEN_BRIGHT},${Math.min(1, alpha * 1.7)})`
+              : `rgba(${LOGO_BLUE},${alpha})`;
           if (index === 0 && isIntro) {
-            ctx!.shadowColor = "rgba(0,255,65,.7)";
+            ctx!.shadowColor = `rgba(${LOGO_GREEN},.7)`;
             ctx!.shadowBlur = 8;
           }
           ctx!.fillText(char, x, y);

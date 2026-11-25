@@ -94,7 +94,7 @@ export default function MatrixIntro() {
           aria-label="X Utility startup animation"
         >
           <MatrixCanvas mode="intro" targetRef={logoRef} className="absolute inset-0 h-full w-full" />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,.62)_68%,#000_100%)]" aria-hidden />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(26,27,38,.6)_0%,rgba(0,0,0,.72)_68%,#000_100%)]" aria-hidden />
 
           <div className="relative z-10 flex flex-col items-center px-6">
             <div ref={logoRef} className={`intro-logo-shell ${logoState}`}>
@@ -112,12 +112,12 @@ export default function MatrixIntro() {
               <span className="intro-brackets" aria-hidden />
             </div>
 
-            <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.32em] text-[#00ff41]/75" aria-live="polite">
+            <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.32em] text-[#7aa2f7]/80" aria-live="polite">
               {status}
             </p>
             <div className="mt-3 h-px w-48 overflow-hidden bg-white/10" aria-hidden>
               <motion.div
-                className="h-full bg-[#00ff41] shadow-[0_0_10px_rgba(0,255,65,.8)]"
+                className="h-full bg-gradient-to-r from-[#7aa2f7] to-[#9ece6a] shadow-[0_0_10px_rgba(122,162,247,.8)]"
                 initial={{ width: "4%" }}
                 animate={{ width: phase === "exit" ? "100%" : phase === "reveal" ? "72%" : "26%" }}
                 transition={{ duration: 0.45, ease: "easeOut" }}
@@ -129,10 +129,10 @@ export default function MatrixIntro() {
             ref={skipRef}
             type="button"
             onClick={() => finish(true)}
-            className="absolute bottom-7 right-7 z-20 inline-flex items-center gap-2 rounded-sm border border-[#00ff41]/30 bg-black/60 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#00ff41]/80 transition-colors hover:border-[#00ff41]/70 hover:text-[#00ff41] focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#00ff41]"
+            className="absolute bottom-7 right-7 z-20 inline-flex items-center gap-2 rounded-sm border border-[#7aa2f7]/30 bg-black/60 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[#7aa2f7]/85 transition-colors hover:border-[#9ece6a]/70 hover:text-[#9ece6a] focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#7aa2f7]"
           >
             Skip intro
-            <kbd className="rounded-[2px] border border-[#00ff41]/25 px-1 py-0.5 text-[9px]">Esc</kbd>
+            <kbd className="rounded-[2px] border border-[#7aa2f7]/25 px-1 py-0.5 text-[9px]">Esc</kbd>
           </button>
           <span className="sr-only">The introduction ends automatically. Press Escape to skip it.</span>
         </motion.div>

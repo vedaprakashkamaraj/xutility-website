@@ -51,7 +51,7 @@ The palette button in the navbar opens seven themes: Matte Black (default), Toky
 
 ### Matrix opening and ambient rain
 
-On a fresh tab, a short (~3s) canvas intro reconstructs the **original** logo from green code particles, applies a scan/glitch pass, then fades into the existing site. It plays once per tab (`sessionStorage`), can be skipped with **Esc** or the Skip intro button, and is disabled entirely for `prefers-reduced-motion`. A low-opacity digital rain canvas sits behind the home hero only. The implementation is in `src/components/MatrixIntro.tsx` and `src/components/MatrixCanvas.tsx`, with no new runtime dependencies.
+On a fresh tab, a short (~3s) canvas intro reconstructs the **original** logo from code particles in the logo's own blue/green palette (`#7aa2f7` / `#9ece6a`), applies a scan/glitch pass, then fades into the existing site. It plays once per tab (`sessionStorage`), can be skipped with **Esc** or the Skip intro button, and is disabled entirely for `prefers-reduced-motion`. A low-opacity digital rain canvas sits behind the home hero only. The implementation is in `src/components/MatrixIntro.tsx` and `src/components/MatrixCanvas.tsx`, with no new runtime dependencies.
 
 ## Download behaviour
 
