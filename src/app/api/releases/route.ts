@@ -11,10 +11,13 @@ import {
   type ReleasesResponse,
 } from "@/lib/releases";
 
+const githubToken = process.env.GITHUB_TOKEN;
+
 const headers = {
   Accept: "application/vnd.github+json",
   "User-Agent": "xutility-website",
   "X-GitHub-Api-Version": "2022-11-28",
+  ...(githubToken ? { Authorization: `Bearer ${githubToken}` } : {}),
 };
 
 const cacheHeaders = { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600" };
@@ -37,7 +40,7 @@ export async function GET() {
 
   let releases: GitHubRelease[];
   try {
-    const res = await fetch(endpoint, { headers, next: { revalidate: 300 } });
+    const res = await fetch(endpoint, { headers, next: { revalidate: 60 } });
     if (!res.ok) {
       return emptyResponse("error", `GitHub returned ${res.status}. Try again later.`);
     }

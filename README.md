@@ -31,6 +31,8 @@ npm start
 
 Edit `src/config/site.json` for navigation, features, supported platforms, asset patterns, installation instructions and roadmap text.
 
+Optionally set `GITHUB_TOKEN` (a GitHub personal access token with public repo read access) to raise the Releases API rate limit from 60 to 5,000 requests per hour. Without it the site still works unauthenticated.
+
 Set `NEXT_PUBLIC_SITE_URL` to your deployed origin so metadata, canonical URLs, sitemap and robots use the correct domain:
 
 ```sh
