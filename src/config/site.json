@@ -63,7 +63,7 @@
   "downloads": {
     "patterns": {
       "windows": [".exe", ".msi", "win", "windows", "setup"],
-      "linux": [".deb", ".rpm", ".appimage", "linux", ".tar.gz", ".pacman"],
+      "linux": [".deb", ".rpm", ".appimage", "linux", "pacman"],
       "macos": [".dmg", ".pkg", "macos", "darwin", "apple", "intel", "arm64"]
     },
     "checksumNames": ["sha256", "checksum", "checksums"],
