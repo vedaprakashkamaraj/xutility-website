@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --bg: #080a0d;
+  --panel: #101418;
+  --line: #242b33;
+  --fg: #f5f7fa;
+  --muted: #98a2ae;
+}
+
+* { border-color: var(--line); }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: #ffffff; color: #080a0d; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #2a3139; border-radius: 999px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: #3d4650; }
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .section {
+    @apply py-20 sm:py-28;
+  }
+
+  .glass {
+    background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+    border: 1px solid rgba(255,255,255,.09);
+    backdrop-filter: blur(14px);
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition-colors duration-200;
+  }
+
+  .card:hover {
+    @apply border-white/25 bg-white/[0.045];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black transition-transform duration-200 hover:-translate-y-0.5 hover:bg-white/90;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white/35 hover:bg-white/[0.08];
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-400;
+  }
+
+  .eyebrow {
+    @apply mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500;
+  }
+
+  .gradient-text {
+    background: linear-gradient(100deg, #ffffff 10%, #9ca3af 55%, #ffffff 95%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hairline {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+    height: 1px;
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.prose-x h3 { @apply mt-8 text-lg font-semibold text-white; }
+.prose-x p { @apply mt-3 text-sm leading-7 text-zinc-400; }
+.prose-x ul { @apply mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-400; }
+.prose-x code { @apply rounded bg-white/10 px-1.5 py-0.5 text-[13px] text-zinc-100; }
+.prose-x pre { @apply mt-4 overflow-x-auto rounded-xl border border-white/10 bg-black/60 p-4 text-[13px] text-zinc-300; }
+.prose-x pre code { @apply bg-transparent p-0; }
+.prose-x a { @apply text-white underline decoration-white/30 underline-offset-4 hover:decoration-white; }
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 0%, black, transparent 80%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

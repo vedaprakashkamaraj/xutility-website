@@ -1,0 +1,98 @@
+{
+  "name": "X Utility",
+  "shortName": "xutil",
+  "tagline": "One Utility. Every Platform.",
+  "description": "An open-source, cross-platform toolbox for installing software and managing your system from one clean interface.",
+  "url": "https://github.com/vedaprakashkamaraj/xulity",
+  "repository": {
+    "owner": "vedaprakashkamaraj",
+    "repo": "xulity",
+    "branch": "main"
+  },
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Download", "href": "/download" },
+    { "label": "Features", "href": "/features" },
+    { "label": "Docs", "href": "/docs" },
+    { "label": "About", "href": "/about" },
+    { "label": "GitHub", "href": "/github" }
+  ],
+  "platforms": ["Windows", "Linux", "macOS"],
+  "features": [
+    {
+      "title": "Cross-platform installation",
+      "description": "One catalog of tools that adapts to Windows, Linux and macOS using the right package manager for each system.",
+      "icon": "Layers"
+    },
+    {
+      "title": "Software management",
+      "description": "Browse, search, preview and run installation tasks from a terminal interface or a modern graphical window.",
+      "icon": "Boxes"
+    },
+    {
+      "title": "Linux utilities",
+      "description": "Package managers, system cleanup, firewall checks, SSH setup, printer drivers and self-update tasks.",
+      "icon": "Terminal"
+    },
+    {
+      "title": "Windows utilities",
+      "description": "winget, Chocolatey and Scoop installs, Defender scans, restore points, Explorer tweaks and maintenance tasks.",
+      "icon": "AppWindow"
+    },
+    {
+      "title": "macOS utilities",
+      "description": "Homebrew-based app installs and platform-aware catalog entries for Apple Silicon and Intel Macs.",
+      "icon": "Apple"
+    },
+    {
+      "title": "Clean, approachable interface",
+      "description": "Keyboard-first terminal UI and a polished GUI with themes, search, previews and a task queue.",
+      "icon": "Sparkles"
+    },
+    {
+      "title": "Open source",
+      "description": "Readable Python source, a TOML catalog you can extend, and a public repository for issues and contributions.",
+      "icon": "GitBranch"
+    },
+    {
+      "title": "Lightweight",
+      "description": "The engine uses only the Python standard library. The single-file build carries the whole catalog with no runtime dependencies.",
+      "icon": "Feather"
+    }
+  ],
+  "downloads": {
+    "patterns": {
+      "windows": [".exe", ".msi", "win", "windows", "setup"],
+      "linux": [".deb", ".rpm", ".appimage", "linux", ".tar.gz", ".pacman"],
+      "macos": [".dmg", ".pkg", "macos", "darwin", "apple", "intel", "arm64"]
+    },
+    "checksumNames": ["sha256", "checksum", "checksums"],
+    "instructions": {
+      "windows": [
+        "Download the .exe or .msi installer and double-click it.",
+        "If SmartScreen warns you, choose More info, then Run anyway.",
+        "For the portable build, extract the .zip and run xutil.exe from the folder.",
+        "Right-click the app and choose Run as administrator for system-level tasks."
+      ],
+      "linux": [
+        "Debian / Ubuntu: sudo apt install ./xutil.deb",
+        "Fedora / RHEL: sudo dnf install ./xutil.rpm",
+        "AppImage: chmod +x xutil.AppImage && ./xutil.AppImage",
+        "Arch: install from the AUR package or run python3 xutil.py from source.",
+        "Universal: python3 xutil.py --gui, or use the single-file dist/xutil.py."
+      ],
+      "macos": [
+        "Open the .dmg and drag X Utility to Applications.",
+        "For Apple Silicon and Intel builds, pick the matching asset on the release page.",
+        "If macOS blocks the app, open System Settings → Privacy & Security and choose Open Anyway.",
+        "Homebrew is required for the macOS software catalog."
+      ]
+    }
+  },
+  "roadmap": [
+    { "title": "Signed release artifacts", "description": "Code-signed installers and published checksums for every platform.", "status": "Planned" },
+    { "title": "Plugin catalog", "description": "Community-maintained task packs distributed as separate TOML catalogs.", "status": "Planned" },
+    { "title": "Package manager integrations", "description": "First-class winget, apt/dnf/pacman and Homebrew sync status.", "status": "In progress" },
+    { "title": "Desktop integrations", "description": "System tray, updater and deeper desktop environment theming.", "status": "Exploring" }
+  ]
+}
